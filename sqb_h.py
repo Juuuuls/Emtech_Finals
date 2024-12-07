@@ -36,7 +36,7 @@ def reset_circuit(window):
     update_visualization(window)  # Update the Bloch sphere with the reset state
 
 # Function to create and run the quantum circuit window (called by main.py)
-def run_quantum_circuit_window():
+def run_sqb_window():
     window = tk.Toplevel()  # Create a new window (like a new page)
     window.title("Quantum Circuit Simulator")
     window.geometry("800x600")
