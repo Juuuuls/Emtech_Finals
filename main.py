@@ -1,6 +1,7 @@
 import tkinter as tk
 import sqb_h
-import eof_h  # Import eof_h to use its functions
+import eof_h  
+#import mqb_h
 
 class Application(tk.Tk):
     def __init__(self):
@@ -8,24 +9,18 @@ class Application(tk.Tk):
 
         self.title("Main Page")
         self.geometry("400x300")
-
-        # Add 4 buttons for different pages
         self.create_buttons()
 
     def create_buttons(self):
-        # Button 1 to open quantum circuit page (eof_h.py)
-        button1 = tk.Button(self, text="Quantum Circuit", command=self.open_quantum_circuit_page)
+        button1 = tk.Button(self, text="Single Cubit Superposition", command=self.open_quantum_circuit_page)
         button1.pack(pady=10)
 
-        # Button 2 for other functionality (you can modify this)
-        button2 = tk.Button(self, text="Page 2", command=self.page2)
+        button2 = tk.Button(self, text="Multi-Cubit Superposition", command=self.page2)
         button2.pack(pady=10)
 
-        # Button 3 for opening quantum circuit page from eof_h.py
-        button3 = tk.Button(self, text="Quantum Simulation", command=self.open_quantum_simulation)
+        button3 = tk.Button(self, text="Effects of Measurement", command=self.open_quantum_simulation)
         button3.pack(pady=10)
 
-        # Button 4 for additional functionality (modify as needed)
         button4 = tk.Button(self, text="Page 4", command=self.page4)
         button4.pack(pady=10)
 
