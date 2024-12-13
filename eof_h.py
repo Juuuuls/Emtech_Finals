@@ -6,11 +6,13 @@ from qiskit_aer import AerSimulator
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import random
+import main
 
 def run_eof_window():
-    """Function to create the quantum circuit page."""
-    window = tk.Tk()
+    """Function to create the quantum circuit page with modern styling."""
+    window = tk.Toplevel()
     window.title("Quantum Circuit Simulator")
+    window.configure(bg="#2b2d42")  # Dark modern background
 
     def run_quantum_circuit():
         try:
@@ -71,49 +73,76 @@ def run_eof_window():
                 noisy_counts[noisy_key] = value
         return noisy_counts
 
-    # Create the GUI components
-    qubits_label = ttk.Label(window, text="Number of Qubits:")
-    qubits_label.grid(row=0, column=0, padx=10, pady=10)
+    # Frame with modern styling
+    controls_frame = tk.Frame(window, bd=2, relief="sunken", padx=10, pady=10, bg="#8d99ae")
+    controls_frame.pack(side="left", fill="both", expand=True, padx=20, pady=20)
 
-    qubits_entry = ttk.Entry(window)
+    visualization_frame = tk.Frame(window, bd=2, relief="sunken", padx=10, pady=10, bg="#edf2f4")
+    visualization_frame.pack(side="right", fill="both", expand=True, padx=20, pady=20)
+
+    # Add input components to controls_frame
+    label_style = {"font": ("Helvetica", 12), "fg": "#edf2f4", "bg": "#8d99ae"}
+    qubits_label = tk.Label(controls_frame, text="Number of Qubits:", **label_style)
+    qubits_label.grid(row=0, column=0, padx=10, pady=10, sticky="e")
+
+    qubits_entry = tk.Entry(controls_frame, font=("Helvetica", 12))
     qubits_entry.grid(row=0, column=1, padx=10, pady=10)
 
-    shots_label = ttk.Label(window, text="Number of Shots:")
-    shots_label.grid(row=1, column=0, padx=10, pady=10)
+    shots_label = tk.Label(controls_frame, text="Number of Shots:", **label_style)
+    shots_label.grid(row=1, column=0, padx=10, pady=10, sticky="e")
 
-    shots_entry = ttk.Entry(window)
+    shots_entry = tk.Entry(controls_frame, font=("Helvetica", 12))
     shots_entry.grid(row=1, column=1, padx=10, pady=10)
 
-    operation_label = ttk.Label(window, text="Quantum Operation:")
-    operation_label.grid(row=2, column=0, padx=10, pady=10)
+    operation_label = tk.Label(controls_frame, text="Quantum Operation:", **label_style)
+    operation_label.grid(row=2, column=0, padx=10, pady=10, sticky="e")
 
-    operation_combobox = ttk.Combobox(window, values=["Hadamard", "Pauli-X"])
+    operation_combobox = ttk.Combobox(controls_frame, values=["Hadamard", "Pauli-X"], font=("Helvetica", 12))
     operation_combobox.grid(row=2, column=1, padx=10, pady=10)
 
-    noise_label = ttk.Label(window, text="Noise Level:")
-    noise_label.grid(row=3, column=0, padx=10, pady=10)
+    noise_label = tk.Label(controls_frame, text="Noise Level: 0.0", **label_style)
+    noise_label.grid(row=3, column=0, padx=10, pady=10, sticky="e")
 
-    # Slider for controlling the noise level (from 0 to 1)
-    noise_slider = ttk.Scale(window, from_=0, to_=1, orient='horizontal', length=200)
-    noise_slider.set(0.1)  # Set the default noise level to 0.1 (10%)
+    def update_noise_label(val):
+        noise_label.config(text=f"Noise Level: {float(val):.2f}")
+
+    noise_slider = ttk.Scale(controls_frame, from_=0, to=1, orient="horizontal", command=update_noise_label)
+    noise_slider.set(0.1)
     noise_slider.grid(row=3, column=1, padx=10, pady=10)
 
-    run_button = ttk.Button(window, text="Run Simulation", command=run_quantum_circuit)
+    button_style = {
+        "font": ("Helvetica", 12),
+        "bg": "#ef233c",
+        "fg": "#edf2f4",
+        "activebackground": "#d90429",
+        "activeforeground": "#edf2f4",
+        "relief": "flat",
+        "width": 20
+    }
+
+    run_button = tk.Button(controls_frame, text="Run Simulation", command=run_quantum_circuit, **button_style)
     run_button.grid(row=4, column=0, columnspan=2, pady=10)
 
-    qc_text_label = ttk.Label(window, text="Quantum Circuit:")
-    qc_text_label.grid(row=5, column=0, columnspan=2)
+    # Add visualization components to visualization_frame
+    qc_text_label = tk.Label(visualization_frame, text="Quantum Circuit:", font=("Helvetica", 12, "bold"), fg="#2b2d42", bg="#edf2f4")
+    qc_text_label.grid(row=0, column=0, padx=10, pady=10, sticky="w")
 
-    qc_text = tk.Text(window, height=10, width=40)
-    qc_text.grid(row=6, column=0, columnspan=2, padx=10, pady=10)
+    qc_text = tk.Text(visualization_frame, height=10, width=60, font=("Courier", 12), bg="#f8f9fa", fg="#2b2d42")
+    qc_text.grid(row=1, column=0, padx=10, pady=10)
 
-    result_label = ttk.Label(window, text="Measurement Results:")
-    result_label.grid(row=7, column=0, columnspan=2, padx=10, pady=10)
+    result_label = tk.Label(visualization_frame, text="Measurement Results:", font=("Helvetica", 12, "bold"), fg="#2b2d42", bg="#edf2f4")
+    result_label.grid(row=2, column=0, padx=10, pady=10, sticky="w")
 
-    # Set up the plot
-    fig, ax = plt.subplots(figsize=(5, 4))
-    canvas = FigureCanvasTkAgg(fig, window)
-    canvas.get_tk_widget().grid(row=8, column=0, columnspan=2)
+    fig, ax = plt.subplots(figsize=(4, 3))
+    canvas = FigureCanvasTkAgg(fig, visualization_frame)
+    canvas.get_tk_widget().grid(row=3, column=0, padx=10, pady=10)
 
-    # Run the tkinter main loop
+    def return_to_main_menu():
+        """Returns to the main menu."""
+        window.destroy()
+        main.Application().mainloop()
+
+    button_close = tk.Button(controls_frame, text="Return to Main Menu", command=return_to_main_menu, **button_style)
+    button_close.grid(row=5, column=0, columnspan=2, pady=10)
+
     window.mainloop()
