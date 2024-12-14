@@ -54,7 +54,7 @@ conda install jupyter
 ### Installation
 
 5. **Download the `EDITED_EMTECH` Folder:**
-   - You can download the `EDITED_EMTECH` folder directly from [this link](https://github.com/yourusername/repository-name/tree/main/EDITED_EMTECH) or just by checking the files above.
+   - You can download the `EDITED_EMTECH` folder directly from [this link](https://github.com/Juuuuls/Emtech_Finals/tree/8f1e63b0492c2861f5a5bee742ffc3153cbdff4a/EDITED_EMTECH) or just by checking the files above.
 
 6. **Either download it as a whole and extract the folder, or create a folder and manually download the files, then insert them into the folder.**
    - There should be 4 files in the folder.
