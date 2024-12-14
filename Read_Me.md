@@ -37,16 +37,8 @@
 <h3 align="center">Visualizing Quantum Superposition and Entanglement Using Qiskit</h3>
 
   <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    This project presents a Quantum Circuit Simulator developed using Python and Qiskit. The simulator enables users to create and manipulate quantum circuits, apply quantum gates, and visualize the results through a graphical interface. It also includes a noise simulation feature to demonstrate the impact of imperfections on quantum operations. The tool provides an interactive platform for exploring quantum computing concepts and is designed to help users better understand quantum circuits and their behaviors.
+    
   </p>
 </div>
 
