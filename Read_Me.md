@@ -37,7 +37,7 @@
 <h3 align="center">Visualizing Quantum Superposition and Entanglement Using Qiskit</h3>
 
   <p align="center">
-    This project presents a Quantum Circuit Simulator developed using Python and Qiskit. The simulator enables users to create and manipulate quantum circuits, apply quantum gates, and visualize the results through a graphical interface. It also includes a noise simulation feature to demonstrate the impact of imperfections on quantum operations. The tool provides an interactive platform for exploring quantum computing concepts and is designed to help users better understand quantum circuits and their behaviors.
+   This project is a Quantum Circuit Simulator using Python and Qiskit, enabling circuit creation, manipulation, and noise simulation for learning quantum computing.
     
   </p>
 </div>
@@ -77,26 +77,9 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`, `project_license`
+This project presents a Quantum Circuit Simulator developed using Python and Qiskit. The simulator enables users to create and manipulate quantum circuits, apply quantum gates, and visualize the results through a graphical interface. It also includes a noise simulation feature to demonstrate the impact of imperfections on quantum operations. The tool provides an interactive platform for exploring quantum computing concepts and is designed to help users better understand quantum circuits and their behaviors.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-### Built With
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -106,31 +89,28 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+If you don’t have Anaconda installed, download and install it from here. Anaconda will manage your Python environments and dependencies.
+* conda
   ```sh
-  npm install npm@latest -g
+  conda create -n quantum_env python=3.8
+  conda activate quantum_env
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Install required Python packages
    ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
+   pip install cirq
+   pip install qiskit
+   pip install matplotlib
+   pip install numpy
+   pip install scipy
+   pip install pandas
+   pip install pennylane
+   pip install qutip
+   pip install qiskit_aer
+
+   conda install jupyter
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
