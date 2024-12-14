@@ -82,7 +82,7 @@ class Application(tk.Tk):
     def exit_application(self):
         """Function to exit the application."""
         print("Exiting the application...")
-        self.quit()
+        self.destroy() 
 
 # Run the main application
 if __name__ == "__main__":
