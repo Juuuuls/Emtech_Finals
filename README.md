@@ -57,7 +57,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-If you don’t have Anaconda installed, download and install it from here. Anaconda will manage your Python environments and dependencies.
+1.If you don’t have Anaconda installed, download and install it from here. Anaconda will manage your Python environments and dependencies.
 * conda
   ```sh
   conda create -n quantum_env python=3.11
@@ -66,7 +66,7 @@ If you don’t have Anaconda installed, download and install it from here. Anaco
 
 ### Installation
 
-1. Install required Python packages
+2. Install required Python packages
    ```sh
    pip install cirq
    pip install qiskit
@@ -79,6 +79,14 @@ If you don’t have Anaconda installed, download and install it from here. Anaco
    pip install qiskit_aer
 
    conda install jupyter
+   ```
+
+3. Create a folder for the app
+
+4. Download the files 
+   ```sh
+   main.py
+   mqb_h.py
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
