@@ -67,6 +67,7 @@ conda install jupyter
 7. **Now, just run the main.py file**
    
 ### Documentation
+ [CPE018_KUYAJS_Visualizing Quantum Superposition Using Qiskit](https://github.com/Juuuuls/Emtech_Finals/blob/c6a182ed4d90dc1ba3f66d3142cbea9121b895f4/CPE018_KUYAJS_Visualizing%20Quantum%20Superposition%20Using%20Qiskit.pdf)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
