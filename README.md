@@ -64,6 +64,9 @@ conda install jupyter
    sqb_h.py
    interference.py
    ```
+7. **Now, just run the main.py file**
+   
+### Documentation
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
